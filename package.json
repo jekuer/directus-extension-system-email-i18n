@@ -1,0 +1,56 @@
+{
+	"name": "directus-extension-system-email-i18n",
+	"description": "Directus CMS extension to translate system emails (password reset, user registration and invitation)",
+	"author": {
+		"email": "code@jekuer.com",
+		"name": "Jens Kuerschner"
+	},
+	"license": "MIT",
+	"icon": "translate",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-hook",
+		"i18n",
+		"mail",
+		"translation",
+		"hook"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jekuer/directus-extension-system-email-i18n.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jekuer/directus-extension-system-email-i18n/issues"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"homepage": "https://github.com/jekuer/directus-extension-system-email-i18n",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "12.1.4",
+		"@types/ip": "^1.1.3",
+		"@types/node": "^22.10.5",
+		"typescript": "^5.7.3"
+	},
+	"dependencies": {
+		"ip": "^2.0.1"
+	}
+}

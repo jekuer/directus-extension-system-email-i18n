@@ -1,0 +1,13 @@
+# THE .gitignore
+
+.DS_Store
+node_modules
+dist
+*.code-workspace
+
+# PLUS what else should not be on npm
+
+/.github
+security.md
+package-lock.json
+.gitattributes
