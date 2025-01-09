@@ -26,6 +26,8 @@ Check the [official Directus guide](https://docs.directus.io/extensions/installi
 * When we are dealing with a system email, it would check for the user's language.
 * If this language is not English, it would look for an email template with a language suffix and a subject in a respective environment variable `I18N_EMAIL_SUBJECTS`.
 
+<br />
+
 > **Warning:**  
 > When you are using this extension, you need to make sure that for every system email type and used language, you have a [liquid template](https://docs.directus.io/self-hosted/email-templates.html) set up.  
 > If a template is missing, emails might not get sent.
@@ -63,3 +65,7 @@ If you would now add Spanish:
 ## Contributing
 
 Anyone is welcome to contribute, but mind the [guidelines](.github/CONTRIBUTING.md):
+
+- [Bug reports](.github/CONTRIBUTING.md#bugs)
+- [Feature requests](.github/CONTRIBUTING.md#features)
+- [Pull requests](.github/CONTRIBUTING.md#pull-requests)
