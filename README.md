@@ -2,11 +2,23 @@
 
 This extension allows you to translate system emails (user invitation, user registration, password reset) per user.
 
+<br />
+
+---
+
+<br />
+
 ## Installation
 
 There are multiple way to install an extension.
 
 Check the [official Directus guide](https://docs.directus.io/extensions/installing-extensions.html) for more information.
+
+<br />
+
+---
+
+<br />
 
 ## How it works
 
@@ -14,9 +26,15 @@ Check the [official Directus guide](https://docs.directus.io/extensions/installi
 * When we are dealing with a system email, it would check for the user's language.
 * If this language is not English, it would look for an email template with a language suffix and a subject in a respective environment variable `I18N_EMAIL_SUBJECTS`.
 
-**Warning:**  
-When you are using this extension, you need to make sure that for every system email type and used language, you have a [liquid template](https://docs.directus.io/self-hosted/email-templates.html) set up.  
-If a template is missing, emails might not get sent.
+> **Warning:**  
+> When you are using this extension, you need to make sure that for every system email type and used language, you have a [liquid template](https://docs.directus.io/self-hosted/email-templates.html) set up.  
+> If a template is missing, emails might not get sent.
+
+<br />
+
+---
+
+<br />
 
 ## Example
 
@@ -35,6 +53,12 @@ If you would now add Spanish:
 
 1. add a template `password-reset-es`
 2. adjust the env var to something like `{"de":{"password-reset": "Passwort zurücksetzen"}, "es":{"password-reset": "Restablecer contraseña"}}`
+
+<br />
+
+---
+
+<br />
 
 ## Contributing
 
