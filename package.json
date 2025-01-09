@@ -1,5 +1,6 @@
 {
 	"name": "directus-extension-system-email-i18n",
+	"version": "1.0.0",
 	"description": "Directus CMS extension to translate system emails (password reset, user registration and invitation)",
 	"author": {
 		"email": "code@jekuer.com",
@@ -7,7 +8,6 @@
 	},
 	"license": "MIT",
 	"icon": "translate",
-	"version": "1.0.0",
 	"keywords": [
 		"directus",
 		"directus-extension",
