@@ -14,7 +14,35 @@ There are multiple way to install an extension.
 
 Check the [official Directus guide](https://docs.directus.io/extensions/installing-extensions.html) for more information.
 
-> Mind that in order to see this in the (self-hosted and Enterprise Cloud) Directus Marketplace, you would need to allow non-sandboxed extensions ([see docs](https://docs.directus.io/self-hosted/config-options.html#marketplace)).
+<br />
+
+### A. Installing via the Directus Marketplace
+
+Simply install it via the marketplace with 1 click.
+
+> Mind that in order to see this in the (self-hosted and Enterprise Cloud) Directus Marketplace, you would need to allow non-sandboxed extensions ([see docs](https://docs.directus.io/self-hosted/config-options.html#marketplace)).  
+
+### B. Installing via the npm Registry
+
+Use the code from npm via...
+
+```sh
+npm install directus-extension-system-email-i18n
+```
+
+or
+
+```sh
+pnpm install directus-extension-system-email-i18n
+```
+
+... and include this into your Docker build flow.
+
+### C. Installing via the Extensions Directory
+
+1. Download the code.
+2. Build it via `npm ci && npm run build`.
+3. Upload the files to your extensions directory.
 
 <br />
 
