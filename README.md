@@ -50,11 +50,12 @@ pnpm install directus-extension-system-email-i18n
 
 <br />
 
-## How it works
+## How to use
 
 * The extension is a hook, which filters all emails sent by Directus.
 * When we are dealing with a system email, it would check for the user's language.
-* If this language is not English, it would look for an email template with a language suffix and a subject in a respective environment variable `I18N_EMAIL_SUBJECTS`.
+* If this language is not the default language, it would look for an email template with a language suffix.
+* Additionally (in all cases), it looks for a subject in a respective environment variable `I18N_EMAIL_SUBJECTS`.
 
 <br />
 
@@ -85,6 +86,8 @@ If you would now add Spanish:
 
 1. add a template `password-reset-es`
 2. adjust the env var to something like `{"de":{"password-reset": "Passwort zurücksetzen"}, "es":{"password-reset": "Restablecer contraseña"}}`
+
+**Bonus:** You could still also add an alternative English block to the env var in order to change the default subject.
 
 <br />
 
