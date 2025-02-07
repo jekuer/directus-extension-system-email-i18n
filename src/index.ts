@@ -16,7 +16,7 @@ export default defineHook(({ filter }, { services, getSchema, env }) => {
 
 			// pull in any subject translation form the environment variable I18N_EMAIL_SUBJECTS (scheme: {"de": {"password-reset": "Passwort zurücksetzen", ...}, ...})
 			// TODO: Could also become a setting somewhere in the Directus app as an alternative to the environment variable
-			const i18nEmailSubjects = JSON.parse(env.I18N_EMAIL_SUBJECTS) || {};
+			const i18nEmailSubjects = typeof env.I18N_EMAIL_SUBJECTS === 'object' ? env.I18N_EMAIL_SUBJECTS : JSON.parse(env.I18N_EMAIL_SUBJECTS || '{}');
 
 			// preparing the accountability object to be able searching directus users with admin rights
 			// this includes a lot of empty props, which is necessary to match the type of the accountability object
