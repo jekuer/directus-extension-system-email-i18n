@@ -24,7 +24,7 @@ Simply install it via the marketplace with 1 click.
 
 ### B. Installing via the npm Registry
 
-Use the code from npm via...
+Use the code from [npm](https://npmjs.com/package/directus-extension-system-email-i18n) via...
 
 ```sh
 npm install directus-extension-system-email-i18n
