@@ -1,5 +1,4 @@
 import { defineHook } from '@directus/extensions-sdk';
-import ip from 'ip';
 import type { Accountability} from '@directus/types';
 
 interface I18nSubjects {
@@ -16,10 +15,7 @@ export default defineHook(({ filter }, { services, logger, getSchema, env }) => 
 
 		if (['password-reset', 'user-invitation', 'user-registration'].includes(templateName)) {	
 			try {
-				// take IP from the server this script is running on
-				const systemIp = ip.address();
-
-				// pull in any subject translation form the environment variable I18N_EMAIL_SUBJECTS (scheme: {"de": {"password-reset": "Passwort zurücksetzen", ...}, ...})
+				 // pull in any subject translation form the environment variable I18N_EMAIL_SUBJECTS (scheme: {"de": {"password-reset": "Passwort zurücksetzen", ...}, ...})
 				// TODO: Could also become a setting somewhere in the Directus app as an alternative to the environment variable
 				let i18nEmailSubjects: I18nSubjects = {};
 				try {
@@ -38,7 +34,7 @@ export default defineHook(({ filter }, { services, logger, getSchema, env }) => 
 					user: null,
 					admin: true,
 					app: false,
-					ip: systemIp,
+					ip: null,
 					origin: 'user language lookup by extension'
 				};
 
