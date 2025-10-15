@@ -23,6 +23,4 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Publish package
-        run: npm publish --provenance --tag ${{ github.event.release.prerelease && 'next' || 'latest' }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
+        run: npm publish --tag ${{ github.event.release.prerelease && 'next' || 'latest' }}
