@@ -64,7 +64,7 @@ export default defineHook(({ filter }, { services, logger, getSchema, env }) => 
 						fields: ['language'],
 						limit: 1
 					});
-					const lang = response[0].language?.split('-')[0] ? response[0].language.split('-')[0] : defaultLang;
+					const lang = response[0]?.language?.split('-')[0] ? response[0].language.split('-')[0] : defaultLang;
 
 					// override the subject with the translation from the environment variable (if available)
 					input.subject = i18nEmailSubjects[lang] && i18nEmailSubjects[lang][templateName] ? i18nEmailSubjects[lang][templateName] : input.subject;
