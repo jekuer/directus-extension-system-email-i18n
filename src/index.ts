@@ -11,6 +11,11 @@ export default defineHook(({ filter }, { services, logger, getSchema, env }) => 
 	const { ItemsService } = services;
 
 	filter('email.send', async (input: any) => {
+		
+		if (!input.template) {
+			return input;
+		}
+
 		const templateName = input.template.name;
 
 		if (['password-reset', 'user-invitation', 'user-registration'].includes(templateName)) {	
