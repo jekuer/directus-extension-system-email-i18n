@@ -18,7 +18,7 @@ Check the [official Directus guide](https://docs.directus.io/extensions/installi
 
 ### A. Installing via the Directus Marketplace
 
-Simply install it via the marketplace with 1 click.
+Simply install it via the marketplace with 1 click, searching for `System Email` and picking the one with title "System Email I18n".
 
 > Mind that in order to see this in the (self-hosted and Enterprise Cloud) Directus Marketplace, you would need to allow non-sandboxed extensions ([see docs](https://docs.directus.io/self-hosted/config-options.html#marketplace)).  
 
