@@ -1,5 +1,5 @@
 import { defineHook } from '@directus/extensions-sdk';
-import type { Accountability} from '@directus/types';
+import type { Accountability } from '@directus/types';
 
 interface I18nSubjects {
 	[key: string]: {
