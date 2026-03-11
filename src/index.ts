@@ -1,5 +1,5 @@
 import { defineHook } from '@directus/extensions-sdk';
-import type { Accountability} from '@directus/types';
+import type { Accountability, EmailOptions } from '@directus/types';
 
 interface I18nSubjects {
 	[key: string]: {
@@ -10,7 +10,7 @@ interface I18nSubjects {
 export default defineHook(({ filter }, { services, logger, getSchema, env }) => {
 	const { ItemsService } = services;
 
-	filter('email.send', async (input: any) => {
+	filter('email.send', async (input: EmailOptions) => {
 		
 		if (!input.template) {
 			return input;
@@ -55,10 +55,11 @@ export default defineHook(({ filter }, { services, logger, getSchema, env }) => 
 					const defaultLang = settingsResponse?.default_language?.split('-')[0] || 'en';
 					// get the language from searching and reading the user
 					const users = new ItemsService('directus_users', { schema: await getSchema(), accountability: adminAccountability }); 
+					const toEmail = typeof input.to === 'string' ? input.to : (input.to as any)?.address || '';
 					const response = await users.readByQuery({
 						filter: {
 							email: {
-								_eq: input.to
+								_eq: toEmail
 							}
 						},
 						fields: ['language'],
